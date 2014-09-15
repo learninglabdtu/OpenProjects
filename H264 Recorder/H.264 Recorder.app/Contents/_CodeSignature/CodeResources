@@ -8,18 +8,26 @@
 		<data>
 		DtRe71FWmIy5D+/urONHMEtjWwY=
 		</data>
+		<key>Resources/Assets.car</key>
+		<data>
+		+OsIDNkLnkpVVdLvD29pjdlDPYk=
+		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5xzZFCH4mLednUbS1InSNmvmxn0=
+			TR01l9MLyi2sD3+t/Casw9wY8hw=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>Resources/PreferencesController.nib</key>
 		<data>
-		hlKoezwI2p8vPLB5RHVjCQZu+BQ=
+		Zjw0VE4W8GxvlB5DuPDhwdri3yA=
+		</data>
+		<key>Resources/PreferencesViewController.nib</key>
+		<data>
+		j1BC2ASiTsA8SGhroKCTsy40JMc=
 		</data>
 		<key>Resources/en.lproj/Credits.rtf</key>
 		<dict>
@@ -62,18 +70,26 @@
 		<data>
 		DtRe71FWmIy5D+/urONHMEtjWwY=
 		</data>
+		<key>Resources/Assets.car</key>
+		<data>
+		+OsIDNkLnkpVVdLvD29pjdlDPYk=
+		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5xzZFCH4mLednUbS1InSNmvmxn0=
+			TR01l9MLyi2sD3+t/Casw9wY8hw=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>Resources/PreferencesController.nib</key>
 		<data>
-		hlKoezwI2p8vPLB5RHVjCQZu+BQ=
+		Zjw0VE4W8GxvlB5DuPDhwdri3yA=
+		</data>
+		<key>Resources/PreferencesViewController.nib</key>
+		<data>
+		j1BC2ASiTsA8SGhroKCTsy40JMc=
 		</data>
 		<key>Resources/en.lproj/Credits.rtf</key>
 		<dict>
