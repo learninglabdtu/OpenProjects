@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC54164D189AFB07004A9E4E /* FrameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DC54164C189AFB07004A9E4E /* FrameObject.m */; };
+		DC541653189BA268004A9E4E /* MediaPoolWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DC541652189BA268004A9E4E /* MediaPoolWatcher.m */; };
+		DC569BF5189AEF31007B2214 /* CallbackMonitors.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC569BF3189AEF31007B2214 /* CallbackMonitors.mm */; };
+		DC58A94B188703B500746389 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC58A94A188703B500746389 /* Cocoa.framework */; };
+		DC58A955188703B500746389 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC58A953188703B500746389 /* InfoPlist.strings */; };
+		DC58A957188703B500746389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58A956188703B500746389 /* main.m */; };
+		DC58A95B188703B500746389 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DC58A959188703B500746389 /* Credits.rtf */; };
+		DC58A95E188703B500746389 /* SwitcherMediaPoolAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58A95D188703B500746389 /* SwitcherMediaPoolAppDelegate.m */; };
+		DC58A963188703B500746389 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC58A962188703B500746389 /* Images.xcassets */; };
+		DC58A96A188703B500746389 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC58A969188703B500746389 /* XCTest.framework */; };
+		DC58A96B188703B500746389 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC58A94A188703B500746389 /* Cocoa.framework */; };
+		DC58A973188703B500746389 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC58A971188703B500746389 /* InfoPlist.strings */; };
+		DC58A975188703B500746389 /* ATEM_Media_Pool_UpdaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58A974188703B500746389 /* ATEM_Media_Pool_UpdaterTests.m */; };
+		DC58A9801887044600746389 /* BMDSwitcherAPIDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC58A97F1887044600746389 /* BMDSwitcherAPIDispatch.cpp */; };
+		DC62A13018A38E4D00B1EB05 /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62A12F18A38E4D00B1EB05 /* gray.png */; };
+		DCA55D65189FE4B3009793DF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA55D63189FE4B3009793DF /* MainViewController.xib */; };
+		DCE9ECF9189FFCC10034B961 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9ECF7189FFCC10034B961 /* green.png */; };
+		DCE9ECFA189FFCC10034B961 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9ECF8189FFCC10034B961 /* red.png */; };
+		DCE9ECFF18A05B730034B961 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9ECFE18A05B730034B961 /* yellow.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC220AC61895ACBF00EA9F91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC220AB01895ACBF00EA9F91 /* SwitcherMediaPool.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
+			remoteInfo = SwitcherMediaPool;
+		};
+		DC220AC91895ACBF00EA9F91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC220ABF1895ACBF00EA9F91 /* SwitcherPanel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
+			remoteInfo = SwitcherPanel;
+		};
+		DC58A96C188703B500746389 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC58A93F188703B500746389 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC58A946188703B500746389;
+			remoteInfo = "ATEM Media Pool Updater";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC220A9B1895ACBF00EA9F91 /* BMDSwitcherAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDSwitcherAPI.h; sourceTree = "<group>"; };
+		DC220A9C1895ACBF00EA9F91 /* BMDSwitcherAPI_v3_5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDSwitcherAPI_v3_5.h; sourceTree = "<group>"; };
+		DC220A9D1895ACBF00EA9F91 /* BMDSwitcherAPI_v4_0.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDSwitcherAPI_v4_0.h; sourceTree = "<group>"; };
+		DC220A9E1895ACBF00EA9F91 /* BMDSwitcherAPI_v4_1_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDSwitcherAPI_v4_1_3.h; sourceTree = "<group>"; };
+		DC220A9F1895ACBF00EA9F91 /* BMDSwitcherAPIDispatch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BMDSwitcherAPIDispatch.cpp; sourceTree = "<group>"; };
+		DC220AA01895ACBF00EA9F91 /* BMDSwitcherAPIDispatch_v4_0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BMDSwitcherAPIDispatch_v4_0.cpp; sourceTree = "<group>"; };
+		DC220AA31895ACBF00EA9F91 /* SwitcherMediaPool.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = SwitcherMediaPool.app; sourceTree = "<group>"; };
+		DC220AA41895ACBF00EA9F91 /* SwitcherPanel.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = SwitcherPanel.app; sourceTree = "<group>"; };
+		DC220AA61895ACBF00EA9F91 /* CallbackMonitors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallbackMonitors.h; sourceTree = "<group>"; };
+		DC220AA71895ACBF00EA9F91 /* CallbackMonitors.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CallbackMonitors.mm; sourceTree = "<group>"; };
+		DC220AA91895ACBF00EA9F91 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC220AAB1895ACBF00EA9F91 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DC220AAC1895ACBF00EA9F91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC220AAD1895ACBF00EA9F91 /* MediaPoolTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPoolTransfer.h; sourceTree = "<group>"; };
+		DC220AAE1895ACBF00EA9F91 /* MediaPoolTransfer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MediaPoolTransfer.mm; sourceTree = "<group>"; };
+		DC220AAF1895ACBF00EA9F91 /* SwitcherMediaPool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwitcherMediaPool-Info.plist"; sourceTree = "<group>"; };
+		DC220AB01895ACBF00EA9F91 /* SwitcherMediaPool.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwitcherMediaPool.xcodeproj; sourceTree = "<group>"; };
+		DC220AB31895ACBF00EA9F91 /* SwitcherMediaPool_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitcherMediaPool_Prefix.pch; sourceTree = "<group>"; };
+		DC220AB41895ACBF00EA9F91 /* SwitcherMediaPoolAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitcherMediaPoolAppDelegate.h; sourceTree = "<group>"; };
+		DC220AB51895ACBF00EA9F91 /* SwitcherMediaPoolAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwitcherMediaPoolAppDelegate.mm; sourceTree = "<group>"; };
+		DC220AB61895ACBF00EA9F91 /* TGALoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGALoader.h; sourceTree = "<group>"; };
+		DC220AB71895ACBF00EA9F91 /* TGALoader.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TGALoader.mm; sourceTree = "<group>"; };
+		DC220ABA1895ACBF00EA9F91 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC220ABC1895ACBF00EA9F91 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DC220ABD1895ACBF00EA9F91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC220ABE1895ACBF00EA9F91 /* SwitcherPanel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwitcherPanel-Info.plist"; sourceTree = "<group>"; };
+		DC220ABF1895ACBF00EA9F91 /* SwitcherPanel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwitcherPanel.xcodeproj; sourceTree = "<group>"; };
+		DC220AC21895ACBF00EA9F91 /* SwitcherPanel_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitcherPanel_Prefix.pch; sourceTree = "<group>"; };
+		DC220AC31895ACBF00EA9F91 /* SwitcherPanelAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitcherPanelAppDelegate.h; sourceTree = "<group>"; };
+		DC220AC41895ACBF00EA9F91 /* SwitcherPanelAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwitcherPanelAppDelegate.mm; sourceTree = "<group>"; };
+		DC54164B189AFB07004A9E4E /* FrameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameObject.h; sourceTree = "<group>"; };
+		DC54164C189AFB07004A9E4E /* FrameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameObject.m; sourceTree = "<group>"; };
+		DC541651189BA268004A9E4E /* MediaPoolWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPoolWatcher.h; sourceTree = "<group>"; };
+		DC541652189BA268004A9E4E /* MediaPoolWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPoolWatcher.m; sourceTree = "<group>"; };
+		DC569BF3189AEF31007B2214 /* CallbackMonitors.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CallbackMonitors.mm; sourceTree = "<group>"; };
+		DC569BF4189AEF31007B2214 /* CallbackMonitors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallbackMonitors.h; sourceTree = "<group>"; };
+		DC58A947188703B500746389 /* ATEM Media Pool Updater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ATEM Media Pool Updater.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC58A94A188703B500746389 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DC58A94D188703B500746389 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DC58A94E188703B500746389 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DC58A94F188703B500746389 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC58A952188703B500746389 /* ATEM Media Pool Updater-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ATEM Media Pool Updater-Info.plist"; sourceTree = "<group>"; };
+		DC58A954188703B500746389 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC58A956188703B500746389 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC58A958188703B500746389 /* ATEM Media Pool Updater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ATEM Media Pool Updater-Prefix.pch"; sourceTree = "<group>"; };
+		DC58A95A188703B500746389 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DC58A95C188703B500746389 /* SwitcherMediaPoolAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitcherMediaPoolAppDelegate.h; sourceTree = "<group>"; };
+		DC58A95D188703B500746389 /* SwitcherMediaPoolAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitcherMediaPoolAppDelegate.m; sourceTree = "<group>"; };
+		DC58A962188703B500746389 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC58A968188703B500746389 /* ATEM Media Pool UpdaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ATEM Media Pool UpdaterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC58A969188703B500746389 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DC58A970188703B500746389 /* ATEM Media Pool UpdaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ATEM Media Pool UpdaterTests-Info.plist"; sourceTree = "<group>"; };
+		DC58A972188703B500746389 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC58A974188703B500746389 /* ATEM_Media_Pool_UpdaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATEM_Media_Pool_UpdaterTests.m; sourceTree = "<group>"; };
+		DC58A97E1887044600746389 /* BMDSwitcherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDSwitcherAPI.h; sourceTree = "<group>"; };
+		DC58A97F1887044600746389 /* BMDSwitcherAPIDispatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BMDSwitcherAPIDispatch.cpp; sourceTree = "<group>"; };
+		DC62A12F18A38E4D00B1EB05 /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
+		DCA55D63189FE4B3009793DF /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		DCE9ECF7189FFCC10034B961 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		DCE9ECF8189FFCC10034B961 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		DCE9ECFE18A05B730034B961 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC58A944188703B500746389 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC58A94B188703B500746389 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC58A965188703B500746389 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC58A96B188703B500746389 /* Cocoa.framework in Frameworks */,
+				DC58A96A188703B500746389 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC220A991895ACBF00EA9F91 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				DC220A9A1895ACBF00EA9F91 /* include */,
+				DC220AA11895ACBF00EA9F91 /* Samples */,
+			);
+			name = "Mac OS X";
+			path = "../../Downloads/Blackmagic ATEM Switchers SDK 4.2.1/Mac OS X";
+			sourceTree = "<group>";
+		};
+		DC220A9A1895ACBF00EA9F91 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DC220A9B1895ACBF00EA9F91 /* BMDSwitcherAPI.h */,
+				DC220A9C1895ACBF00EA9F91 /* BMDSwitcherAPI_v3_5.h */,
+				DC220A9D1895ACBF00EA9F91 /* BMDSwitcherAPI_v4_0.h */,
+				DC220A9E1895ACBF00EA9F91 /* BMDSwitcherAPI_v4_1_3.h */,
+				DC220A9F1895ACBF00EA9F91 /* BMDSwitcherAPIDispatch.cpp */,
+				DC220AA01895ACBF00EA9F91 /* BMDSwitcherAPIDispatch_v4_0.cpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DC220AA11895ACBF00EA9F91 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				DC220AA21895ACBF00EA9F91 /* bin */,
+				DC220AA51895ACBF00EA9F91 /* SwitcherMediaPool */,
+				DC220AB81895ACBF00EA9F91 /* SwitcherPanel */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		DC220AA21895ACBF00EA9F91 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				DC220AA31895ACBF00EA9F91 /* SwitcherMediaPool.app */,
+				DC220AA41895ACBF00EA9F91 /* SwitcherPanel.app */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		DC220AA51895ACBF00EA9F91 /* SwitcherMediaPool */ = {
+			isa = PBXGroup;
+			children = (
+				DC220AA61895ACBF00EA9F91 /* CallbackMonitors.h */,
+				DC220AA71895ACBF00EA9F91 /* CallbackMonitors.mm */,
+				DC220AA81895ACBF00EA9F91 /* InfoPlist.strings */,
+				DC220AAA1895ACBF00EA9F91 /* MainMenu.xib */,
+				DC220AAC1895ACBF00EA9F91 /* main.m */,
+				DC220AAD1895ACBF00EA9F91 /* MediaPoolTransfer.h */,
+				DC220AAE1895ACBF00EA9F91 /* MediaPoolTransfer.mm */,
+				DC220AAF1895ACBF00EA9F91 /* SwitcherMediaPool-Info.plist */,
+				DC220AB01895ACBF00EA9F91 /* SwitcherMediaPool.xcodeproj */,
+				DC220AB31895ACBF00EA9F91 /* SwitcherMediaPool_Prefix.pch */,
+				DC220AB41895ACBF00EA9F91 /* SwitcherMediaPoolAppDelegate.h */,
+				DC220AB51895ACBF00EA9F91 /* SwitcherMediaPoolAppDelegate.mm */,
+				DC220AB61895ACBF00EA9F91 /* TGALoader.h */,
+				DC220AB71895ACBF00EA9F91 /* TGALoader.mm */,
+			);
+			path = SwitcherMediaPool;
+			sourceTree = "<group>";
+		};
+		DC220AB11895ACBF00EA9F91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC220AC71895ACBF00EA9F91 /* SwitcherMediaPool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC220AB81895ACBF00EA9F91 /* SwitcherPanel */ = {
+			isa = PBXGroup;
+			children = (
+				DC220AB91895ACBF00EA9F91 /* InfoPlist.strings */,
+				DC220ABB1895ACBF00EA9F91 /* MainMenu.xib */,
+				DC220ABD1895ACBF00EA9F91 /* main.m */,
+				DC220ABE1895ACBF00EA9F91 /* SwitcherPanel-Info.plist */,
+				DC220ABF1895ACBF00EA9F91 /* SwitcherPanel.xcodeproj */,
+				DC220AC21895ACBF00EA9F91 /* SwitcherPanel_Prefix.pch */,
+				DC220AC31895ACBF00EA9F91 /* SwitcherPanelAppDelegate.h */,
+				DC220AC41895ACBF00EA9F91 /* SwitcherPanelAppDelegate.mm */,
+			);
+			path = SwitcherPanel;
+			sourceTree = "<group>";
+		};
+		DC220AC01895ACBF00EA9F91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC220ACA1895ACBF00EA9F91 /* SwitcherPanel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC58A93E188703B500746389 = {
+			isa = PBXGroup;
+			children = (
+				DCA55D63189FE4B3009793DF /* MainViewController.xib */,
+				DC541651189BA268004A9E4E /* MediaPoolWatcher.h */,
+				DC541652189BA268004A9E4E /* MediaPoolWatcher.m */,
+				DC58A950188703B500746389 /* ATEM Media Pool Updater */,
+				DC58A96E188703B500746389 /* ATEM Media Pool UpdaterTests */,
+				DC58A949188703B500746389 /* Frameworks */,
+				DC58A948188703B500746389 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC58A948188703B500746389 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC58A947188703B500746389 /* ATEM Media Pool Updater.app */,
+				DC58A968188703B500746389 /* ATEM Media Pool UpdaterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC58A949188703B500746389 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC220A991895ACBF00EA9F91 /* Mac OS X */,
+				DC58A94A188703B500746389 /* Cocoa.framework */,
+				DC58A969188703B500746389 /* XCTest.framework */,
+				DC58A94C188703B500746389 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC58A94C188703B500746389 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC58A94D188703B500746389 /* AppKit.framework */,
+				DC58A94E188703B500746389 /* CoreData.framework */,
+				DC58A94F188703B500746389 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DC58A950188703B500746389 /* ATEM Media Pool Updater */ = {
+			isa = PBXGroup;
+			children = (
+				DC58A95C188703B500746389 /* SwitcherMediaPoolAppDelegate.h */,
+				DC58A95D188703B500746389 /* SwitcherMediaPoolAppDelegate.m */,
+				DC58A962188703B500746389 /* Images.xcassets */,
+				DC58A951188703B500746389 /* Supporting Files */,
+			);
+			path = "ATEM Media Pool Updater";
+			sourceTree = "<group>";
+		};
+		DC58A951188703B500746389 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC58A97E1887044600746389 /* BMDSwitcherAPI.h */,
+				DC569BF3189AEF31007B2214 /* CallbackMonitors.mm */,
+				DC62A12F18A38E4D00B1EB05 /* gray.png */,
+				DC54164B189AFB07004A9E4E /* FrameObject.h */,
+				DC54164C189AFB07004A9E4E /* FrameObject.m */,
+				DC569BF4189AEF31007B2214 /* CallbackMonitors.h */,
+				DC58A97F1887044600746389 /* BMDSwitcherAPIDispatch.cpp */,
+				DC58A952188703B500746389 /* ATEM Media Pool Updater-Info.plist */,
+				DC58A953188703B500746389 /* InfoPlist.strings */,
+				DCE9ECFE18A05B730034B961 /* yellow.png */,
+				DCE9ECF7189FFCC10034B961 /* green.png */,
+				DCE9ECF8189FFCC10034B961 /* red.png */,
+				DC58A956188703B500746389 /* main.m */,
+				DC58A958188703B500746389 /* ATEM Media Pool Updater-Prefix.pch */,
+				DC58A959188703B500746389 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC58A96E188703B500746389 /* ATEM Media Pool UpdaterTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC58A974188703B500746389 /* ATEM_Media_Pool_UpdaterTests.m */,
+				DC58A96F188703B500746389 /* Supporting Files */,
+			);
+			path = "ATEM Media Pool UpdaterTests";
+			sourceTree = "<group>";
+		};
+		DC58A96F188703B500746389 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC58A970188703B500746389 /* ATEM Media Pool UpdaterTests-Info.plist */,
+				DC58A971188703B500746389 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC58A946188703B500746389 /* ATEM Media Pool Updater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC58A978188703B500746389 /* Build configuration list for PBXNativeTarget "ATEM Media Pool Updater" */;
+			buildPhases = (
+				DC58A945188703B500746389 /* Resources */,
+				DC58A943188703B500746389 /* Sources */,
+				DC58A944188703B500746389 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ATEM Media Pool Updater";
+			productName = "ATEM Media Pool Updater";
+			productReference = DC58A947188703B500746389 /* ATEM Media Pool Updater.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC58A967188703B500746389 /* ATEM Media Pool UpdaterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC58A97B188703B500746389 /* Build configuration list for PBXNativeTarget "ATEM Media Pool UpdaterTests" */;
+			buildPhases = (
+				DC58A964188703B500746389 /* Sources */,
+				DC58A965188703B500746389 /* Frameworks */,
+				DC58A966188703B500746389 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC58A96D188703B500746389 /* PBXTargetDependency */,
+			);
+			name = "ATEM Media Pool UpdaterTests";
+			productName = "ATEM Media Pool UpdaterTests";
+			productReference = DC58A968188703B500746389 /* ATEM Media Pool UpdaterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC58A93F188703B500746389 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Learninglab DTU";
+				TargetAttributes = {
+					DC58A967188703B500746389 = {
+						TestTargetID = DC58A946188703B500746389;
+					};
+				};
+			};
+			buildConfigurationList = DC58A942188703B500746389 /* Build configuration list for PBXProject "ATEM Media Pool Updater" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				English,
+			);
+			mainGroup = DC58A93E188703B500746389;
+			productRefGroup = DC58A948188703B500746389 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DC220AB11895ACBF00EA9F91 /* Products */;
+					ProjectRef = DC220AB01895ACBF00EA9F91 /* SwitcherMediaPool.xcodeproj */;
+				},
+				{
+					ProductGroup = DC220AC01895ACBF00EA9F91 /* Products */;
+					ProjectRef = DC220ABF1895ACBF00EA9F91 /* SwitcherPanel.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DC58A946188703B500746389 /* ATEM Media Pool Updater */,
+				DC58A967188703B500746389 /* ATEM Media Pool UpdaterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DC220AC71895ACBF00EA9F91 /* SwitcherMediaPool.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwitcherMediaPool.app;
+			remoteRef = DC220AC61895ACBF00EA9F91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC220ACA1895ACBF00EA9F91 /* SwitcherPanel.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwitcherPanel.app;
+			remoteRef = DC220AC91895ACBF00EA9F91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC58A945188703B500746389 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC58A955188703B500746389 /* InfoPlist.strings in Resources */,
+				DC58A963188703B500746389 /* Images.xcassets in Resources */,
+				DCE9ECF9189FFCC10034B961 /* green.png in Resources */,
+				DCE9ECFA189FFCC10034B961 /* red.png in Resources */,
+				DC58A95B188703B500746389 /* Credits.rtf in Resources */,
+				DCA55D65189FE4B3009793DF /* MainViewController.xib in Resources */,
+				DC62A13018A38E4D00B1EB05 /* gray.png in Resources */,
+				DCE9ECFF18A05B730034B961 /* yellow.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC58A966188703B500746389 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC58A973188703B500746389 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC58A943188703B500746389 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC58A9801887044600746389 /* BMDSwitcherAPIDispatch.cpp in Sources */,
+				DC569BF5189AEF31007B2214 /* CallbackMonitors.mm in Sources */,
+				DC58A95E188703B500746389 /* SwitcherMediaPoolAppDelegate.m in Sources */,
+				DC58A957188703B500746389 /* main.m in Sources */,
+				DC54164D189AFB07004A9E4E /* FrameObject.m in Sources */,
+				DC541653189BA268004A9E4E /* MediaPoolWatcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC58A964188703B500746389 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC58A975188703B500746389 /* ATEM_Media_Pool_UpdaterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC58A96D188703B500746389 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC58A946188703B500746389 /* ATEM Media Pool Updater */;
+			targetProxy = DC58A96C188703B500746389 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC220AA81895ACBF00EA9F91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC220AA91895ACBF00EA9F91 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC220AAA1895ACBF00EA9F91 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC220AAB1895ACBF00EA9F91 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		DC220AB91895ACBF00EA9F91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC220ABA1895ACBF00EA9F91 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC220ABB1895ACBF00EA9F91 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC220ABC1895ACBF00EA9F91 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		DC58A953188703B500746389 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC58A954188703B500746389 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC58A959188703B500746389 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC58A95A188703B500746389 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DC58A971188703B500746389 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC58A972188703B500746389 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC58A976188703B500746389 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_VERSION = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DC58A977188703B500746389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DC58A979188703B500746389 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ATEM Media Pool Updater/ATEM Media Pool Updater-Prefix.pch";
+				INFOPLIST_FILE = "ATEM Media Pool Updater/ATEM Media Pool Updater-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC58A97A188703B500746389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ATEM Media Pool Updater/ATEM Media Pool Updater-Prefix.pch";
+				INFOPLIST_FILE = "ATEM Media Pool Updater/ATEM Media Pool Updater-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DC58A97C188703B500746389 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ATEM Media Pool Updater.app/Contents/MacOS/ATEM Media Pool Updater";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ATEM Media Pool Updater/ATEM Media Pool Updater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ATEM Media Pool UpdaterTests/ATEM Media Pool UpdaterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DC58A97D188703B500746389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ATEM Media Pool Updater.app/Contents/MacOS/ATEM Media Pool Updater";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ATEM Media Pool Updater/ATEM Media Pool Updater-Prefix.pch";
+				INFOPLIST_FILE = "ATEM Media Pool UpdaterTests/ATEM Media Pool UpdaterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC58A942188703B500746389 /* Build configuration list for PBXProject "ATEM Media Pool Updater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC58A976188703B500746389 /* Debug */,
+				DC58A977188703B500746389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC58A978188703B500746389 /* Build configuration list for PBXNativeTarget "ATEM Media Pool Updater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC58A979188703B500746389 /* Debug */,
+				DC58A97A188703B500746389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC58A97B188703B500746389 /* Build configuration list for PBXNativeTarget "ATEM Media Pool UpdaterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC58A97C188703B500746389 /* Debug */,
+				DC58A97D188703B500746389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC58A93F188703B500746389 /* Project object */;
+}
