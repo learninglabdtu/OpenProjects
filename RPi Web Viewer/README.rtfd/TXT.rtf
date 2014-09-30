@@ -1,0 +1,437 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fnil\fcharset0 ArialUnicodeMS;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fmodern\fcharset0 CourierNewPS-BoldMT;}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;\red1\green30\blue169;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid2\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid102\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid202\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18260\viewh18400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs30 \cf0 RPi Web Viewer\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\fs24 \cf0 Download:\
+
+\b0 The Raspberry Pi Image can be downloaded here:\
+\
+http://toolbox.llab.dtu.dk/fileadmin/RPi-images/RPi-Web-Viewer.img\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b\fs30 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\fs24 \cf0 How to set the showed website\
+\
+
+\b0 Open the file \'93start-chrome.sh\'94 on the SD card, and locate the line\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 WEBSITE="http://www.raspberrypi.org"\
+\
+Where the actual url may differ. Change this to the desired address.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+
+\b How to log in via SSH
+\b0 \
+\
+ssh root@[ip-address]\
+\
+or \
+\
+ssh pi@[ip-address]\
+\
+(After login as user \'93pi\'94 you can change to root with \'93su\'94 as usual. Default passwords are the same for the two users.)\
+\
+default password: \'9312345\'94\
+\
+\
+Notice: If you try to login and the RPi doesn\'92t have a correct name server, you may experience a delay of some 10-15 seconds before you are asked to enter your password.\
+\
+If during login you are asked the following question, you probably want to answer \'93yes\'94:\
+The authenticity of host '192.168.1.51 (192.168.1.51)' can't be established.\
+RSA key fingerprint is 4f:b7:16:6b:68:d4:35:15:93:9c:a3:bc:0f:1c:be:b9.\
+Are you sure you want to continue connecting (yes/no)? yes\
+\
+Login via SSH should be possible right after the boot-up image has been shown.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 \
+\pard\pardeftab720\ri-618
+\ls1\ilvl1
+\b \cf0 Set up IP addresses (static and dynamic)
+\fs28 \
+\pard\pardeftab720\ri-618
+
+\b0\fs24 \cf0 \
+Internet connection is possible via the Ethernet jack. When the cabled ethernet is used for internet connection the on-board LEDs will blink affirmatively.\
+\
+IP addresses are set in the files 
+\b wlan0
+\b0  (wireless) and 
+\b eth0
+\b0  (cabled) on the FAT partition of the SD card. \
+\
+Static IP with:\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 IP=static\
+Address=('192.168.1.100/24')\
+Gateway='192.168.1.1'\
+DNS=('192.168.1.1')\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+Hint: Address=('192.168.1.100/24') is the same as IP address 
+\f2 \'93
+\f0 192.168.1.100
+\f2 \'94 
+\f0 and subnet mask 
+\f2 \'93
+\f0 255.255.255.0
+\f2 \'94
+\f0 \
+\
+And dynamic IP with:\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 IP=dhcp\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+To spot which IP has been assigned via DHCP, look in the DHCP table of the network router/DHCP server. The unit will most likely show up as 
+\f2 \'93
+\f0 video-player
+\f2 \'94 
+\f0 in the list.\
+\
+It
+\f2 \'92
+\f0 s also possible to connect directly to the RPi by attaching a computer to the RPi directly with an Ethernet cable. The cable doesn
+\f2 \'92
+\f0 t have to be 
+\f2 \'93
+\f0 crossed
+\f2 \'94
+\f0 . The computer and RPi must both be set up with static IP addresses of course. The connection can always be confirmed with PING, eg:\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 ping 192.168.1.100\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+Answer:\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 PING 192.168.1.100 (192.168.1.100): 56 data bytes\
+64 bytes from 192.168.1.100: icmp_seq=0 ttl=64 time=0.870 ms\
+64 bytes from 192.168.1.100: icmp_seq=1 ttl=64 time=0.975 ms\
+64 bytes from 192.168.1.100: icmp_seq=2 ttl=64 time=1.114 ms\
+....\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+\
+\pard\pardeftab720\ri-618
+\ls2\ilvl1
+\b \cf0 How to set up Wifi including protected WLANs (WPA, WPA2)
+\fs28 \
+\pard\pardeftab720\ri-618
+
+\b0\fs24 \cf0 \
+Per default, WIFI is disabled on the RPi Web viewer, as it introduces a boot delay of ~1,5 minutes, if the dongle is not inserted. To enable it, log in to the Pi using ssh, and execute the following command as root:\
+\
+\pard\pardeftab720
+
+\f3\fs22 \cf0 systemctl enable netctl-auto@wlan0
+\f0\fs24 \
+\pard\pardeftab720\ri-618
+\cf0 \
+Now, the connection can be set up:\
+\
+Wifi connection is possible with an Edimax USB dongle placed in one of the RPis USB slots. When the dongle is used for internet connection the blue LED inside will blink.\
+\
+To authenticate to a WPA Protected network, insert these lines\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 WPAConfigSection=(\
+    'ssid="INSERT_SSID_HERE"'\
+    'key_mgmt=WPA-PSK'\
+    'psk="INSERT_PASSPHRASE_KEY_HERE"'\
+)\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+Substituting 
+\b INSERT_SSID_HERE
+\b0  and 
+\b INSERT_PASSPHRASE_KEY_HERE
+\b0  with the relevant values. Eduroam connection can be established by using the block\
+\
+\
+You can also connect with Eduroam:\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 WPAConfigSection=(\
+\pard\pardeftab720\ri-618
+
+\f2 \cf0 \'a0
+\f1 'ssid="eduroam"'\
+
+\f2 \'a0
+\f1 'proto=RSN'\
+
+\f2 \'a0
+\f1 'key_mgmt=WPA-EAP'\
+
+\f2 \'a0
+\f1 'pairwise=CCMP'\
+
+\f2 \'a0
+\f1 'auth_alg=OPEN'\
+
+\f2 \'a0
+\f1 'eap=PEAP'\
+
+\f2 \'a0
+\f1 'identity="
+\f4\b sXXXXXX
+\f1\b0 "'\
+
+\f2 \'a0
+\f1 'password=
+\f4\b hash:
+\f1\b0 '\
+)\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+Where the password should be set to 
+\b hash:
+\b0  followed by a hash calculated by executing\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 echo -n 
+\f2 \'93
+\f1 password
+\f2 \'94 
+\f1 | iconv -t UTF-16LE | openssl md4\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+\
+Notice: There is no support for 
+\f2 \'93
+\f0 captive portals
+\f2 \'94 
+\f0 - the kind of Wifi connection where you only get internet access after typing in a username and password in a web browser login prompt. \
+\
+\pard\pardeftab720\ri-618
+\ls3\ilvl1
+\b \cf0 How to debug Wifi connection
+\fs28 \
+\pard\pardeftab720\ri-618
+
+\b0\fs24 \cf0 You need to login, so attach a network cable, probably set up a static IP and log on as root.\
+\
+Then you can execute this command:\
+\
+\pard\pardeftab720\ri-618
+
+\f1\fs20 \cf0 journalctl -f -u {\field{\*\fldinst{HYPERLINK "mailto:netctl-auto@wlan0.service"}}{\fldrslt \cf3 \ul netctl-auto@wlan0.service}}\
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+You should see output something like this if it works:\
+\
+\pard\tx709\tx1418\tx2127\tx2836\tx3545\tx4254\tx4963\tx5672\tx6381\tx7090\tx7799\tx8508\tx9217\pardeftab720\ri-618
+
+\f1\fs18 \cf0 [root@video-player ~]# journalctl -f -u {\field{\*\fldinst{HYPERLINK "mailto:netctl-auto@wlan0.service"}}{\fldrslt \cf3 \ul netctl-auto@wlan0.service}}
+\fs20 \
+
+\fs18 -- Logs begin at Thu 1970-01-01 01:00:05 CET. --
+\fs20 \
+
+\fs18 Jan 01 01:00:18 video-player wpa_actiond[189]: Interface 'wlan0' connected to network 'T8A2'
+\fs20 \
+
+\fs18 Jan 01 01:00:19 video-player dhcpcd[259]: version 6.3.2 starting
+\fs20 \
+
+\fs18 Jan 01 01:00:21 video-player dhcpcd[259]: DUID 00:01:00:01:1a:49:8f:50:80:1f:02:ab:a7:2f
+\fs20 \
+
+\fs18 Jan 01 01:00:21 video-player dhcpcd[259]: wlan0: IAID 02:ab:a7:2f
+\fs20 \
+
+\fs18 Jan 01 01:00:21 video-player dhcpcd[259]: wlan0: soliciting a DHCP lease
+\fs20 \
+
+\fs18 Jan 01 01:00:23 video-player dhcpcd[259]: wlan0: offered 192.168.1.51 from 192.168.1.1
+\fs20 \
+
+\fs18 Jan 01 01:00:32 video-player dhcpcd[259]: wlan0: leased 192.168.1.51 for 86400 seconds
+\fs20 \
+
+\fs18 Jan 01 01:00:32 video-player dhcpcd[259]: wlan0: adding route to 192.168.1.0/24
+\fs20 \
+
+\fs18 Jan 01 01:00:32 video-player dhcpcd[259]: wlan0: adding default route via 192.168.1.1
+\fs20 \
+
+\fs18 Jan 01 01:00:33 video-player dhcpcd[259]: forked to background, child pid 494
+\fs20 \
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+(Enter 
+\f2 \'93
+\f0 ctrl+c
+\f2 \'94 
+\f0 to exit this view.)\
+\
+\
+if the Edimax is not inserted, you will see something like this:\
+\
+\pard\tx709\tx1418\tx2127\tx2836\tx3545\tx4254\tx4963\tx5672\tx6381\tx7090\tx7799\tx8508\tx9217\pardeftab720\ri-618
+
+\f1\fs18 \cf0 [root@video-player ~]# journalctl -f -u {\field{\*\fldinst{HYPERLINK "mailto:netctl-auto@wlan0.service"}}{\fldrslt \cf3 \ul netctl-auto@wlan0.service}}
+\fs20 \
+
+\fs18 -- Logs begin at Thu 1970-01-01 01:00:05 CET. --
+\fs20 \
+
+\fs18 Jan 01 01:01:34 video-player systemd[1]: Dependency failed for Automatic wireless network connection using netctl profiles.
+\fs20 \
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+if there is a faulty 
+\f2 \'93
+\f0 key
+\f2 \'94 
+\f0 inserted (passphrase for WLAN), it will look something like this:\
+\
+\pard\tx709\tx1418\tx2127\tx2836\tx3545\tx4254\tx4963\tx5672\tx6381\tx7090\tx7799\tx8508\tx9217\pardeftab720\ri-618
+
+\f1\fs18 \cf0 [root@video-player ~]# journalctl -f -u {\field{\*\fldinst{HYPERLINK "mailto:netctl-auto@wlan0.service"}}{\fldrslt \cf3 \ul netctl-auto@wlan0.service}}
+\fs20 \
+
+\fs18 -- Logs begin at Thu 1970-01-01 01:00:05 CET. --
+\fs20 \
+
+\fs18 Jan 01 01:00:16 video-player systemd[1]: Starting Automatic wireless network connection using netctl profiles...
+\fs20 \
+
+\fs18 Jan 01 01:00:16 video-player netctl-auto[160]: Included profile 'wlan0'
+\fs20 \
+
+\fs18 Jan 01 01:00:18 video-player netctl-auto[160]: ioctl[SIOCSIWAP]: Operation not permitted
+\fs20 \
+
+\fs18 Jan 01 01:00:18 video-player netctl-auto[160]: ioctl[SIOCSIWENCODEEXT]: Invalid argument
+\fs20 \
+
+\fs18 Jan 01 01:00:18 video-player netctl-auto[160]: ioctl[SIOCSIWENCODEEXT]: Invalid argument
+\fs20 \
+
+\fs18 Jan 01 01:00:18 video-player systemd[1]: Started Automatic wireless network connection using netctl profiles.
+\fs20 \
+
+\fs18 Jan 01 01:00:19 video-player wpa_actiond[198]: Starting wpa_actiond session for interface 'wlan0'
+\fs20 \
+
+\fs18 \
+\pard\pardeftab720\ri-618
+
+\f0\fs24 \cf0 \
+\
+If your RPi is internet connected with both ethernet and wifi, it will automatically choose the ethernet connection by default but fall back to wifi if the ethernet cable is detached. If the ethernet cable is re-introduced it will begin to use this connection again. This may also introduce a break in streaming.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+
+\b How to change password:
+\b0 \
+\
+Login as \'93root\'94\
+Then, execute this command:\
+\
+mount -o remount,rw /\
+\
+(This will mount the filesystem as write-enabled. It\'92s normally read-only.)\
+\
+Then, write this command and follow instructions:\
+\
+passwd [username]\
+\
+Notice: If you don\'92t enter a username (such as \'93pi\'94), you will change the password for the root user.\
+\
+Reboot your RPi and test the new password to make sure it got saved onto the memory card.\
+\
+(Cut power or write the command \'93reboot\'94)\
+\
+\
+
+\b Creating a copy of the SD card (on a Mac)
+\b0 \
+\
+To create an image (uncompressed), something like this did it: \
+\
+sudo dd if=/dev/rdiskX of=/[path]/webviewer.img bs=1m\
+\
+You\'92ll have to type in the root password.\
+The output might look something like this after a few minutes:\
+\
+3724+0 records in\
+3724+0 records out\
+3904897024 bytes transferred in 253.739066 secs (15389420 bytes/sec)\
+\
+\
+To write the uncompressed image back, something like this works:\
+\
+sudo dd of=/dev/rdiskX if=/[path]/RPiMediaPlayer.img bs=1m\
+\
+You\'92ll have to type in the root password.\
+The output might look something like this after a few minutes:\
+\
+\
+\
+In both cases, rdiskX should be the correct number of the disk. This can be seen inside Disk Utility:\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 {{\NeXTGraphic Pasted Graphic.tiff \width7420 \height5720
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\
+On the above picture X is 3 . VERIFY this number, for example with "diskutil info disk3", which will give you the name, size and the like of the given device. It is important that this number is correct, as the dd command won't hesitate to delete data on a drive if a wrong device is used.\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b \cf0 Screen settings:\
+
+\b0 In the file /boot/config.txt, a lot of options related to HDMI output can be set. Importantly, overscan is disabled, and the mode is set to 720p50 with the two lines\
+\
+disable_overscan=1\
+hdmi_mode=19\
+\
+The reference for these options can be found at {\field{\*\fldinst{HYPERLINK "http://elinux.org/RPi_config.txt"}}{\fldrslt http://elinux.org/RPi_config.txt}}\
+\
+\
+
+\b Reboot:
+\b0 \
+To Reboot the RaspPi, type "reboot" and then the password\
+\
+}

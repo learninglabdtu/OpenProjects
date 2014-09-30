@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body></body>
+<script>
+var pageError = false;
+var destination = "http://dtu.dk";
+var error = function(wnd) { // Fase out
+	pageError = true;
+	wnd.document.open();
+	wnd.document.write("<html><head></head><body style='font-family: palatino;padding: 0; margin: 0'><div id='text' style='-webkit-transition: opacity 1s ease-in-out; opacity:0; width: 100%; height: 100%; background-color: #ddd; color: #000'><div style='position: relative; text-align: center; top:40%'><h1 style='font-size: 50px'>No connection to server</h1>Please contact support if this behaviour is not expected</div></div></body></html>")
+	wnd.document.close();
+	wnd.document.getElementById('text').style.opacity=1;
+	//wnd.document.body.style.cssText = "-webkit-transition: opacity 1s ease-in-out;opacity:0;"
+	//wnd.document.write("IKKE NOGET AT SE HER")
+}
+
+var updateLinks = function(url, wnd) {
+	for(var i in wnd.document.all) {
+		if(wnd.document.all[i].src) {
+			console.log(wnd.document.all[i].src);
+			wnd.document.all[i].src = wnd.document.all[i].src.replace("file://" + window.location.hostname,url);
+			console.log(wnd.document.all[i].src);
+		}
+		if(wnd.document.all[i].href) {
+			wnd.document.all[i].href = wnd.document.all[i].href.replace("file://" + window.location.hostname,url);
+		}
+			//wnd.document.all[i].src = url + wnd.document.all[i].src
+	}
+}
+var update = function(url, wnd) {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		switch(xhr.readyState) {
+			case 4: // This means taht the response is ready - error or not
+				if (xhr.status === 200) { // Everythings good!
+					wnd.document.open();
+					wnd.document.write(xhr.responseText);
+					wnd.document.close();
+					setTimeout(function(){updateLinks(url,wnd)}, 100);
+					pageError = false
+					// OK!
+				} else { // :()
+					if(!pageError)
+						error(wnd);
+				}
+			case 3: // Bah, can't remember these. Look em' up.
+			case 2: // ... It's not like they're interesting anyway.
+			case 1:
+			default:
+				break;
+		}
+	}
+	xhr.open("GET", url, true);
+	xhr.send();
+}
+update(destination, window);
+
+//window.setInterval(function(){update(destination, window);}, 1000);
+
+</script>
+</html>
