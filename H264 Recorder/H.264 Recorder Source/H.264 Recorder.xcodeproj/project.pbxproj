@@ -16,10 +16,11 @@
 		DC640B8D18BF87C3004C0E7B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DC640B8C18BF87C3004C0E7B /* GCDAsyncSocket.m */; };
 		DC640B8F18BF893F004C0E7B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC640B8E18BF893F004C0E7B /* Security.framework */; };
 		DC7A3A0B18B6852F00D0C4ED /* FFMpegWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7A3A0A18B6852F00D0C4ED /* FFMpegWrapper.m */; };
-		DC859ED718C884ED00E8F8B5 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC859ED518C884ED00E8F8B5 /* PreferencesController.m */; };
-		DC859ED818C884ED00E8F8B5 /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC859ED618C884ED00E8F8B5 /* PreferencesController.xib */; };
 		DCA8B84718CB18A1009CFD89 /* TCPInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B84618CB18A1009CFD89 /* TCPInterfaceController.m */; };
 		DCB00A9718C8D348005F0E43 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = DCB00A9618C8D348005F0E43 /* ffmpeg */; };
+		DCDD7EEC1A0E42B300CA8769 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7EEA1A0E42B300CA8769 /* PreferencesController.m */; };
+		DCDD7EED1A0E42B300CA8769 /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDD7EEB1A0E42B300CA8769 /* PreferencesController.xib */; };
+		DCDD7EF01A0E42DF00CA8769 /* H264Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7EEF1A0E42DF00CA8769 /* H264Recorder.m */; };
 		DCF0F1CF18B64B47000DCDE3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF0F1CE18B64B47000DCDE3 /* Cocoa.framework */; };
 		DCF0F1D918B64B47000DCDE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCF0F1D718B64B47000DCDE3 /* InfoPlist.strings */; };
 		DCF0F1DB18B64B47000DCDE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF0F1DA18B64B47000DCDE3 /* main.m */; };
@@ -31,9 +32,6 @@
 		DCF0F1EF18B64B47000DCDE3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF0F1CE18B64B47000DCDE3 /* Cocoa.framework */; };
 		DCF0F1F718B64B47000DCDE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCF0F1F518B64B47000DCDE3 /* InfoPlist.strings */; };
 		DCF0F1F918B64B47000DCDE3 /* H_264_RecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF0F1F818B64B47000DCDE3 /* H_264_RecorderTests.m */; };
-		DCF5269318B64BDC00FFDFE3 /* H264Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF5269218B64BDC00FFDFE3 /* H264Recorder.m */; };
-		DCF5269818B64D5200FFDFE3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF5269518B64D5200FFDFE3 /* AsyncSocket.m */; };
-		DCF5269918B64D5200FFDFE3 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF5269718B64D5200FFDFE3 /* AsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,14 +58,16 @@
 		DC640B8E18BF893F004C0E7B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		DC7A3A0918B6852F00D0C4ED /* FFMpegWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMpegWrapper.h; sourceTree = "<group>"; };
 		DC7A3A0A18B6852F00D0C4ED /* FFMpegWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMpegWrapper.m; sourceTree = "<group>"; };
-		DC859ED418C884ED00E8F8B5 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		DC859ED518C884ED00E8F8B5 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
-		DC859ED618C884ED00E8F8B5 /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
 		DCA8B84518CB18A1009CFD89 /* TCPInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPInterfaceController.h; sourceTree = "<group>"; };
 		DCA8B84618CB18A1009CFD89 /* TCPInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPInterfaceController.m; sourceTree = "<group>"; };
 		DCB00A9618C8D348005F0E43 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		DCD61BBF18D1DA5D001DBCF4 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/QuickTime.framework; sourceTree = DEVELOPER_DIR; };
 		DCD61BC118D1DB08001DBCF4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/QTKit.framework; sourceTree = DEVELOPER_DIR; };
+		DCDD7EE91A0E42B300CA8769 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		DCDD7EEA1A0E42B300CA8769 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		DCDD7EEB1A0E42B300CA8769 /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		DCDD7EEE1A0E42DF00CA8769 /* H264Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264Recorder.h; sourceTree = "<group>"; };
+		DCDD7EEF1A0E42DF00CA8769 /* H264Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H264Recorder.m; sourceTree = "<group>"; };
 		DCF0F1CB18B64B47000DCDE3 /* H.264 Recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "H.264 Recorder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF0F1CE18B64B47000DCDE3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DCF0F1D118B64B47000DCDE3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,12 +87,6 @@
 		DCF0F1F418B64B47000DCDE3 /* H.264 RecorderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "H.264 RecorderTests-Info.plist"; sourceTree = "<group>"; };
 		DCF0F1F618B64B47000DCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DCF0F1F818B64B47000DCDE3 /* H_264_RecorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H_264_RecorderTests.m; sourceTree = "<group>"; };
-		DCF5269118B64BDC00FFDFE3 /* H264Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264Recorder.h; path = ../H264Recorder.h; sourceTree = "<group>"; };
-		DCF5269218B64BDC00FFDFE3 /* H264Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = H264Recorder.m; path = ../H264Recorder.m; sourceTree = "<group>"; };
-		DCF5269418B64D5200FFDFE3 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = ../AsyncSocket.h; sourceTree = "<group>"; };
-		DCF5269518B64D5200FFDFE3 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = ../AsyncSocket.m; sourceTree = "<group>"; };
-		DCF5269618B64D5200FFDFE3 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncUdpSocket.h; path = ../AsyncUdpSocket.h; sourceTree = "<group>"; };
-		DCF5269718B64D5200FFDFE3 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncUdpSocket.m; path = ../AsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +115,6 @@
 		DCF0F1C218B64B47000DCDE3 = {
 			isa = PBXGroup;
 			children = (
-				DC859ED418C884ED00E8F8B5 /* PreferencesController.h */,
-				DC859ED518C884ED00E8F8B5 /* PreferencesController.m */,
-				DC859ED618C884ED00E8F8B5 /* PreferencesController.xib */,
 				DCF0F1D418B64B47000DCDE3 /* H.264 Recorder */,
 				DCF0F1F218B64B47000DCDE3 /* H.264 RecorderTests */,
 				DCF0F1CD18B64B47000DCDE3 /* Frameworks */,
@@ -167,19 +158,24 @@
 		DCF0F1D418B64B47000DCDE3 /* H.264 Recorder */ = {
 			isa = PBXGroup;
 			children = (
+				DCDD7EE91A0E42B300CA8769 /* PreferencesController.h */,
+				DCDD7EEA1A0E42B300CA8769 /* PreferencesController.m */,
+				DCDD7EEB1A0E42B300CA8769 /* PreferencesController.xib */,
 				DCF0F1E018B64B47000DCDE3 /* AppDelegate.h */,
 				DCF0F1E118B64B47000DCDE3 /* AppDelegate.m */,
 				DC24A67B19C04D3F00BB885B /* USBDriveWatcher.h */,
 				DC24A67C19C04D3F00BB885B /* USBDriveWatcher.m */,
-				DCF5269118B64BDC00FFDFE3 /* H264Recorder.h */,
 				DC7A3A0918B6852F00D0C4ED /* FFMpegWrapper.h */,
 				DC7A3A0A18B6852F00D0C4ED /* FFMpegWrapper.m */,
-				DCF5269218B64BDC00FFDFE3 /* H264Recorder.m */,
 				DCA8B84518CB18A1009CFD89 /* TCPInterfaceController.h */,
 				DCA8B84618CB18A1009CFD89 /* TCPInterfaceController.m */,
+				DCDD7EEE1A0E42DF00CA8769 /* H264Recorder.h */,
+				DCDD7EEF1A0E42DF00CA8769 /* H264Recorder.m */,
 				DC1609C519AF847D006300C1 /* CrestronInterface.h */,
 				DC1609C619AF847D006300C1 /* CrestronInterface.m */,
 				DCF0F1E318B64B47000DCDE3 /* MainMenu.xib */,
+				DC640B8B18BF87C3004C0E7B /* GCDAsyncSocket.h */,
+				DC640B8C18BF87C3004C0E7B /* GCDAsyncSocket.m */,
 				DCF0F1E618B64B47000DCDE3 /* Images.xcassets */,
 				DCF0F1D518B64B47000DCDE3 /* Supporting Files */,
 			);
@@ -193,12 +189,6 @@
 				DC02403D19AF623600B5727F /* green.png */,
 				DC02403E19AF623600B5727F /* red.png */,
 				DCB00A9618C8D348005F0E43 /* ffmpeg */,
-				DC640B8B18BF87C3004C0E7B /* GCDAsyncSocket.h */,
-				DC640B8C18BF87C3004C0E7B /* GCDAsyncSocket.m */,
-				DCF5269418B64D5200FFDFE3 /* AsyncSocket.h */,
-				DCF5269518B64D5200FFDFE3 /* AsyncSocket.m */,
-				DCF5269618B64D5200FFDFE3 /* AsyncUdpSocket.h */,
-				DCF5269718B64D5200FFDFE3 /* AsyncUdpSocket.m */,
 				DCF0F1D618B64B47000DCDE3 /* H.264 Recorder-Info.plist */,
 				DCF0F1D718B64B47000DCDE3 /* InfoPlist.strings */,
 				DCF0F1DA18B64B47000DCDE3 /* main.m */,
@@ -305,7 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC859ED818C884ED00E8F8B5 /* PreferencesController.xib in Resources */,
+				DCDD7EED1A0E42B300CA8769 /* PreferencesController.xib in Resources */,
 				DC02404019AF623600B5727F /* green.png in Resources */,
 				DCB00A9718C8D348005F0E43 /* ffmpeg in Resources */,
 				DCF0F1D918B64B47000DCDE3 /* InfoPlist.strings in Resources */,
@@ -332,16 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDD7EF01A0E42DF00CA8769 /* H264Recorder.m in Sources */,
+				DCDD7EEC1A0E42B300CA8769 /* PreferencesController.m in Sources */,
 				DC24A67D19C04D3F00BB885B /* USBDriveWatcher.m in Sources */,
 				DCA8B84718CB18A1009CFD89 /* TCPInterfaceController.m in Sources */,
-				DC859ED718C884ED00E8F8B5 /* PreferencesController.m in Sources */,
-				DCF5269318B64BDC00FFDFE3 /* H264Recorder.m in Sources */,
-				DCF5269918B64D5200FFDFE3 /* AsyncUdpSocket.m in Sources */,
 				DC7A3A0B18B6852F00D0C4ED /* FFMpegWrapper.m in Sources */,
 				DCF0F1E218B64B47000DCDE3 /* AppDelegate.m in Sources */,
 				DCF0F1DB18B64B47000DCDE3 /* main.m in Sources */,
 				DC640B8D18BF87C3004C0E7B /* GCDAsyncSocket.m in Sources */,
-				DCF5269818B64D5200FFDFE3 /* AsyncSocket.m in Sources */,
 				DC1609C719AF847D006300C1 /* CrestronInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

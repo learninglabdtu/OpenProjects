@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>227F4130-F136-4E74-9402-12F9279A1BA2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>H.264 Recorder</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EE55404A1DF6648226C144675301A9223E255004</key>
+		<string>https://github.com/learninglabdtu/OpenProjects.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>H264 Recorder/H.264 Recorder Source/H.264 Recorder.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EE55404A1DF6648226C144675301A9223E255004</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/learninglabdtu/OpenProjects.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE55404A1DF6648226C144675301A9223E255004</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE55404A1DF6648226C144675301A9223E255004</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GitHubOpenProjects</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -151,6 +151,8 @@
 -(IBAction) startAutoSnapshots: (id) sender {
     if(![recorder isConnected]) {
         [self showNotification:@"No recording device" withDescription:@"Please connect an H.264 Pro Recorder or ATEM TVS to this computer." tag:nil];
+    } else if(![recorder isEncoding]) {
+        [self showNotification:@"Device not encoding" withDescription:@"Please make sure that a compatible input source is connected to the recording device." tag:nil];
     } else {
         if (![[recorder autoSnapshot] isValid]) {
             [recorder startAutoSnapshots];
@@ -205,6 +207,8 @@
         [[self streamingButton] setTitle:@"Start Streaming"];
     } else if(![recorder isConnected]) {
         [self showNotification:@"No recording device" withDescription:@"Please connect an H.264 Pro Recorder or ATEM TVS to this computer." tag:nil];
+    } else if(![recorder isEncoding]) {
+        [self showNotification:@"Device not encoding" withDescription:@"Please make sure that a compatible input source is connected to the recording device." tag:nil];
     } else {
         if(![recorder startStreaming]) {
             [self showNotification:@"Could not start stream" withDescription:@"Please set a UStream stream URL/Key pair in the preferences dialog before starting streaming." tag:nil];
@@ -217,6 +221,8 @@
         [recorder stopRecording];
     } else if(![recorder isConnected]) {
         [self showNotification:@"No recording device" withDescription:@"Please connect an H.264 Pro Recorder or ATEM TVS to this computer." tag:nil];
+    } else if(![recorder isEncoding]) {
+        [self showNotification:@"Device not encoding" withDescription:@"Please make sure that a compatible input source is connected to the recording device." tag:nil];
     } else {
         if(![recorder startRecording]) {
             [self showNotification:@"Could not start recording" withDescription:@"Please set a valid and writable recording directory in the preferences dialog before recording." tag:nil];
@@ -225,13 +231,17 @@
 }
 
 -(void) showNotification:(NSString *)title withDescription: (NSString*) desc tag:(NSString*) tag {
-    notification = [NSAlert alertWithMessageText:title
-                                      defaultButton:@"OK"
-                                    alternateButton:nil
-                                        otherButton:nil
-                          informativeTextWithFormat:@"%@", desc];
-    notificationTag = tag;
-    [notification beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+    dispatch_async(dispatch_get_main_queue(), ^(){
+        if (notificationTag != tag || tag == nil) {
+            notification = [NSAlert alertWithMessageText:title
+                                              defaultButton:@"OK"
+                                            alternateButton:nil
+                                                otherButton:nil
+                                  informativeTextWithFormat:@"%@", desc];
+            notificationTag = tag;
+            [notification beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:@selector(notificationDidEnd) contextInfo:nil];
+        }
+    });
 }
 
 -(void) notificationDidEnd {
@@ -239,10 +249,12 @@
 }
 
 -(void) dismissNotificationIfTagName: (NSString*) tag {
-    if([notificationTag isEqualToString:tag] && notification) {
-        [[notification window] close];
-        notificationTag = nil;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^(){
+        if([notificationTag isEqualToString:tag] && notification) {
+            [[notification window] close];
+            notificationTag = nil;
+        }
+    });
 }
 
 -(void) stateUpdate:(NSDictionary *)state {
