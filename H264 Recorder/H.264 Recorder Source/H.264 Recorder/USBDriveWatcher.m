@@ -86,7 +86,7 @@ void disk_did_appear(DADiskRef disk, void* context) {
     
     //Mount new disk, in case it is not already mounted..
     DADiskMount(disk, NULL, 0, NULL, NULL);
-    DADiskUnmount(disk, 0, NULL, NULL);
+    DADiskUnmount(disk, kDADiskUnmountOptionForce, NULL, NULL);
     
     if ([diskRecord objectForKey:@"writable"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"writableDiskArrived" object:nil];
