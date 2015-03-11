@@ -89,13 +89,6 @@
     
     recorder = [[H264Recorder alloc] initwithDelegate:self];
     
-//    [self setCheckTimer:[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(checkStreaming) userInfo:nil repeats:YES]];
-//    [[self checkTimer] fire];
-//    
-//    [self setFfmpegCheck:[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(checkFFmpeg) userInfo:nil repeats:YES]];
-//    [[self ffmpegCheck] fire];
-    
-    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         while (1) {
             @autoreleasepool {
@@ -372,7 +365,7 @@
     @synchronized(userOptions){
         [userOptions setObject:[sender stringValue] forKey:@"username"];
     }
-    [self updateMetadata];
+    //[self updateMetadata];
 }
 
 - (void) updateMetadata {

@@ -51,6 +51,7 @@
     q = dispatch_queue_create("com.learninglab.socketqueue", DISPATCH_QUEUE_SERIAL);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopSnapshot:) name:@"manualSnapshot" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recordingStatus:) name:@"recording" object:nil];
     
     frames = [[NSMutableArray alloc] init];
     [self setCmdSocket:[[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()]];
@@ -63,6 +64,7 @@
     [self performSelectorInBackground:@selector(dataWatcher) withObject:nil];
     [self performSelectorInBackground:@selector(statusPoller) withObject:nil];
     [self performSelectorInBackground:@selector(connectToRecorder) withObject:nil];
+    [self performSelectorInBackground:@selector(checkDataCount) withObject:nil];
     
     [self setAutoSnapshot: [[NSTimer alloc] init]];
     
@@ -297,7 +299,6 @@
                     subParts = [[[parts objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsSeparatedByString:@" "];
                     [self setRecorderID:[[NSNumberFormatter alloc] numberFromString:[subParts objectAtIndex:0]]];
                     NSLog(@"Recorder ID: %@", [self recorderID]);
-                    [self sendCommandWithType:@"stop"];
                     deviceName = [parts objectAtIndex:1];
                 }
                 [self setIsConnected:YES];
@@ -310,8 +311,6 @@
                     [self setIsEncoding:YES];
                     NSLog(@"Encoding started. Restarting dataconnection to be safe..");
                     [[self dataSocket] disconnect];
-                    dataCount = 0;
-                    [self performSelector:@selector(checkDataCount) withObject:nil afterDelay:5.0f];
                 }
                 
                 if (![line hasSuffix:@"Unknown"]) {
@@ -506,25 +505,25 @@
 }
 
 -(void) checkDataCount {
-    //NSLog(@"Datacount: %f", dataCount);
-    if (dataCount < 1) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_delegate showNotification:@"Error" withDescription:@"Did not receive any data from the recorder within the first 5 seconds. Try toggling USB/Power." tag:nil ];
-        });
+    while(1) {
+        @autoreleasepool {
+            dataCount = 0;
+            [NSThread sleepForTimeInterval:10.0f];
+            if (dataCount < 1) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([self isEncoding] && [self isConnected]) {
+                        NSLog(@"No data for the past 10 seconds.. Restarting encoding");
+                        [self sendCommandWithType:@"stop"]; // Restarting encoding...
+                    }
+                });
+            }
+        }
     }
+
 }
 
--(void) stopRecording {
-    [stopLock lock];
+-(void) recordingStopped {
     if([self isRecording]) {
-        [statusLock lock];
-        [self setIsConfirmedRecording:NO];
-        recordingStart = [NSDate date];
-        [statusLock unlock];
-        
-        // Blocks until task is terminated
-        [recording terminateTask];
-        
         NSLog(@"Moving file into place...");
         NSString* finalPath = [self createPathWithFilename:[NSString stringWithFormat:[@"video-%@" stringByAppendingString:currentRecordingFormat], [self formattedDate]] inDir:recordingDir];
         
@@ -541,6 +540,20 @@
         }
         
         [[appDelegate usbDriveWatcher] unmountDrives];
+    }
+}
+
+-(void) stopRecording {
+    [stopLock lock];
+    if([self isRecording]) {
+        [statusLock lock];
+        [self setIsConfirmedRecording:NO];
+        recordingStart = [NSDate date];
+        [statusLock unlock];
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [recording terminateTask];
+        });
     }
     [stopLock unlock];
     
@@ -886,7 +899,7 @@
 -(void) recordingStatus: (NSNotification*)n {
     NSString* state = [n object];
     if([state isEqualToString: @"stopped"]) {
-        [self stopRecording];
+        [self recordingStopped];
     }
 }
 

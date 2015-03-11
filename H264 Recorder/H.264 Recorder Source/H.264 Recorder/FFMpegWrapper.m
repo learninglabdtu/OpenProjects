@@ -49,7 +49,7 @@
         
         isTerminating = NO;
         @try {
-        [ffmpeg launch];
+            [ffmpeg launch];
         }
         @catch (NSException* exception) {
             NSLog(@"Caught exception %@ %@", [exception name], [exception description]);
@@ -72,16 +72,8 @@
 }
 
 -(void) terminated: (NSNotification*) notification {
-    [closeLock lock];
-    isTerminating = YES;
-    [_stderr closeFile];
-    [_stdout closeFile];
-    [_stdin closeFile];
-    [closeLock unlock];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self terminateTask];
     [[NSNotificationCenter defaultCenter] postNotificationName:_label object:@"stopped"];
-    
-    _totalTime = @"00:00:00";
     
     if(_autoRestart) {
         [self startTask];
@@ -108,18 +100,19 @@
             } else {
                 NSLog(@"Data: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
             }
-            [[notification object] waitForDataInBackgroundAndNotify];
         }
         
-        if([fh isEqual:_stdout]) {
-            
+        if([fh isEqual:_stdout]) { // We don't really care about stdout..
+            NSData* data = [fh availableData];
+            NSLog(@"Stdout: %@", data);
         }
+        
+        [[notification object] waitForDataInBackgroundAndNotify];
     }
 }
 
 -(void) writeData:(NSData*) data {
-    [closeLock lock];
-    if([ffmpeg isRunning] && !isTerminating) {
+    if([ffmpeg isRunning]) { // Should still write if process isTerminating, as a frame could be incomplete
         [self setHasStarted:YES];
         @try {
             [_stdin writeData:data];
@@ -132,32 +125,38 @@
             
         }
     }
-    [closeLock unlock];
 }
 
 -(void) terminateTask {
-    if (!isTerminating) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:_label object:@"stopped"];
-    }
     _totalTime = @"00:00:00";
     
     [closeLock lock];
     isTerminating = YES;
     if([ffmpeg isRunning]) {
-        [ffmpeg interrupt];
-        
-        [_stderr closeFile];
-        [_stdout closeFile];
-        [_stdin closeFile];
+        [ffmpeg interrupt]; // Important that ffmpeg is closed this way
         
         if([self isRunning]){
             NSLog(@"FFMpeg is still running. Waiting for process to quit gracefully...");
-            while([self isRunning]);
-            NSLog(@"FFMpeg has finished.");
+            int tries = 0;
+            while([self isRunning]) {
+                if (tries++ > 10) {
+                    [ffmpeg terminate];
+                    NSLog(@"FFmpeg did not quit gracefully within 5 seconds, and was terminated. Output is possibly corrupt.");
+                    break;
+                }
+                [NSThread sleepForTimeInterval:0.5f];
+            }
+            NSLog(@"FFMpeg finished");
+            [[NSNotificationCenter defaultCenter] postNotificationName:_label object:@"stopped"];
         }
-        
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [_stderr closeFile];
+    [_stdout closeFile];
+    [_stdin closeFile];
+    
     [closeLock unlock];
 }
 

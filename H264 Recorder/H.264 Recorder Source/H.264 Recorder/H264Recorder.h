@@ -111,6 +111,7 @@
 -(void) terminate;
 -(void) videoPreview;
 -(void) stopPreview;
+-(void) checkDataCount;
 
 -(BOOL) takeSnapshot;
 -(BOOL) takeSnapshotWithPrefix: (NSString*) prefix;
