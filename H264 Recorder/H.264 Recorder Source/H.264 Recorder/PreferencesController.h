@@ -26,6 +26,7 @@
 @property (assign) IBOutlet NSTextField* videoBitrate;
 @property (assign) IBOutlet NSTextField* recordingDir;
 @property (assign) IBOutlet NSTextField* TCPInterfacePort;
+@property (assign) IBOutlet NSTextField* keyframeInterval;
 @property (assign) IBOutlet NSTextField* CrestronInterfacePort;
 @property (assign) IBOutlet NSTextField* TSBackupDir;
 @property (assign) IBOutlet NSButton* writeToUSB;

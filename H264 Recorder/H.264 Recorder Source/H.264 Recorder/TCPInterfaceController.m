@@ -130,6 +130,14 @@
             [_recorder stopRecording];
         }
         response = @"OK";
+    } else if([cmd isEqualToString:@"STOP_STREAMING_AND_RECORDING"]) {
+        if([_recorder isRecording]) {
+            [_recorder stopRecording];
+        }
+        if([_recorder isStreaming]) {
+            [_recorder stopStreaming];
+        }
+        response = @"OK";
     } else if([cmd isEqualToString:@"IS_USB_RECORDING"]) {
         response = ([_recorder isUSBFileOpen]? @"TRUE": @"FALSE");
     } else if([cmd isEqualToString:@"IS_USB_AVAILABLE"]) {

@@ -64,7 +64,6 @@
     [self performSelectorInBackground:@selector(dataWatcher) withObject:nil];
     [self performSelectorInBackground:@selector(statusPoller) withObject:nil];
     [self performSelectorInBackground:@selector(connectToRecorder) withObject:nil];
-    [self performSelectorInBackground:@selector(checkDataCount) withObject:nil];
     
     [self setAutoSnapshot: [[NSTimer alloc] init]];
     
@@ -117,7 +116,7 @@
         
         if(![[self cmdSocket] isConnected]) {
             if(![[self cmdSocket] connectToHost:@"127.0.0.1" onPort:13823 error:nil]){
-                NSLog(@"BAH!");
+                NSLog(@"Connection to the Blackmagic video daemon failed!");
             }
             [[self cmdSocket] readDataWithTimeout:-1 tag:0];
         }
@@ -276,9 +275,6 @@
 -(void) socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     if ([sock isEqual:[self dataSocket]]) {
         @synchronized(frames) {
-//            if([frames count] > 100) {
-//                [self stopPreview];
-//            }
             if([frames count] > 1000) {
                 [frames removeLastObject];
                 NSLog(@"Dropping frame!!!");
@@ -304,13 +300,15 @@
                 [self setIsConnected:YES];
             } else if([line hasPrefix:@"device"]) {
                 deviceState = [[line componentsSeparatedByString:@" "] lastObject];
-                if([line hasSuffix:@"idle"]) {
+                if(![line hasSuffix:@"encoding"]) { // Not encoding. Could be idle or Unknown or firmware
                     NSLog(@"Device is not encoding.");
                     [self setIsEncoding:NO];
-                } else if ([line hasSuffix:@"encoding"]) {
+                } else  {
                     [self setIsEncoding:YES];
                     NSLog(@"Encoding started. Restarting dataconnection to be safe..");
                     [[self dataSocket] disconnect];
+                    dataCount = 0;
+                    [self performSelector:@selector(checkDataCount) withObject:nil afterDelay:5.0f];
                 }
                 
                 if (![line hasSuffix:@"Unknown"]) {
@@ -368,7 +366,13 @@
         if(streamingPassthrough) {
             streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -c copy -c:a libmp3lame -ar 44100 -b:a %@k -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"], streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
         } else {
-            streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -acodec libmp3lame -ar 44100 -b:a %@k -vcodec libx264 -b:v %@k -preset %@ -tune zerolatency -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"],[[appDelegate preferences] objectForKey:@"videoBitrate"], x264preset ,streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
+            NSNumber *keyframeInterval = [[appDelegate preferences] objectForKey:@"keyframeInterval"];
+            if([keyframeInterval isEqual: @0]) {
+                streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -acodec libmp3lame -ar 44100 -b:a %@k -vcodec libx264 -b:v %@k -preset %@ -tune zerolatency -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"],[[appDelegate preferences] objectForKey:@"videoBitrate"], x264preset ,streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
+            } else {
+                streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -acodec libmp3lame -ar 44100 -b:a %@k -vcodec libx264 -b:v %@k -preset %@ -tune zerolatency -g %@ -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"],[[appDelegate preferences] objectForKey:@"videoBitrate"], x264preset, keyframeInterval ,streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
+                NSLog(@"Setting keyframe interval to %@", keyframeInterval);
+            }
         }
         [self setIsStreaming:YES];
         [self setIsConfirmedStreaming:YES];
@@ -505,21 +509,12 @@
 }
 
 -(void) checkDataCount {
-    while(1) {
-        @autoreleasepool {
-            dataCount = 0;
-            [NSThread sleepForTimeInterval:10.0f];
-            if (dataCount < 1) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if ([self isEncoding] && [self isConnected]) {
-                        NSLog(@"No data for the past 10 seconds.. Restarting encoding");
-                        [self sendCommandWithType:@"stop"]; // Restarting encoding...
-                    }
-                });
-            }
-        }
+    //NSLog(@"Datacount: %f", dataCount);
+    if (dataCount < 1) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_delegate showNotification:@"Error" withDescription:@"Did not receive any data from the recorder within the first 5 seconds. Try toggling USB/Power." tag:nil ];
+        });
     }
-
 }
 
 -(void) recordingStopped {

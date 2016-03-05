@@ -62,6 +62,10 @@
         [[self writeBackups] setState:[[appDelegate preferences] boolForKey:@"TSBackupEnabled"]];
     }
     
+    if([[appDelegate preferences] valueForKey:@"keyframeInterval"]) {
+        [[self keyframeInterval] setStringValue:[[appDelegate preferences] valueForKey:@"keyframeInterval"]];
+    }
+    
     if([[appDelegate preferences] valueForKey:@"outputFormat"]) {
         NSMenuItem* item = [[self formatSelect] itemWithTitle:[[appDelegate preferences] valueForKey:@"outputFormat"]];
         if (item) {
@@ -96,9 +100,11 @@
     if([[appDelegate preferences] boolForKey:@"streamingPassthrough"] == YES) {
         [[self videoBitrate] setEnabled:NO];
         [[self x264preset] setEnabled:NO];
+        [[self keyframeInterval] setEnabled:NO];
     } else {
         [[self videoBitrate] setEnabled:YES];
         [[self x264preset] setEnabled:YES];
+        [[self keyframeInterval] setEnabled:YES];
     }
     
     if([[appDelegate preferences] valueForKey:@"tcpInterfacePort"]) {
@@ -172,9 +178,11 @@
     if([[self streamingPassthrough] state] == YES) {
         [[self videoBitrate] setEnabled:NO];
         [[self x264preset] setEnabled:NO];
+        [[self keyframeInterval]setEnabled:NO];
     } else {
         [[self videoBitrate] setEnabled:YES];
         [[self x264preset] setEnabled:YES];
+        [[self keyframeInterval] setEnabled:YES];
     }
 }
 
@@ -201,6 +209,7 @@
     [[appDelegate preferences] setObject:[[self transcodeResolution] titleOfSelectedItem] forKey:@"transcodeResolution"];
     [[appDelegate preferences] setObject:[NSNumber numberWithInteger:[[self snapshotInterval] integerValue]] forKey:@"autoSnapshotsInterval"];
     
+    [[appDelegate preferences] setObject:[NSNumber numberWithInteger:[[[self keyframeInterval]stringValue]integerValue]] forKey:@"keyframeInterval"];
     [[appDelegate preferences] setObject:[NSNumber numberWithInteger:[[[self TCPInterfacePort] stringValue] integerValue]] forKey:@"tcpInterfacePort"];
     [[appDelegate preferences] setObject:[NSNumber numberWithInteger:[[[self CrestronInterfacePort] stringValue] integerValue]] forKey:@"crestronInterfacePort"];
     

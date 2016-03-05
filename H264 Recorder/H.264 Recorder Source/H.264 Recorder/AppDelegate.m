@@ -70,6 +70,10 @@
         [[self preferences] setBool:NO forKey:@"TSBackupEnabled"];
     }
     
+    if(![[self preferences] objectForKey:@"keyframeInterval"]) {
+        [[self preferences] setObject:@0 forKey:@"keyframeInterval"];
+    }
+    
     if(![[self preferences] objectForKey:@"streamTimeout"]) {
         [[self preferences] setObject:@0 forKey:@"streamTimeout"];
     }
