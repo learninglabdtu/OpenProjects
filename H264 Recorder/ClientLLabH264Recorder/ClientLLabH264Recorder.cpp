@@ -25,6 +25,9 @@ bool ClientLLabH264Recorder::startStreaming() {
 bool ClientLLabH264Recorder::stopStreaming() {
 	return GenericHTTPClient::sendRaw(String("STOP_STREAMING"), _ip, PORT);
 }
+bool ClientLLabH264Recorder::stopStreamingAndRecording() {
+	return GenericHTTPClient::sendRaw(String("STOP_STREAMING_AND_RECORDING"), _ip, PORT);
+}
 bool ClientLLabH264Recorder::startAutoSnapshots() {
 	return GenericHTTPClient::sendRaw(String("START_AUTOSNAPSHOTS"), _ip, PORT);
 }
@@ -35,7 +38,7 @@ bool ClientLLabH264Recorder::takeSnapshot() {
 	return GenericHTTPClient::sendRaw(String("TAKE_SNAPSHOT"), _ip, PORT);
 }
 bool ClientLLabH264Recorder::takeSnapshot(String prefix) {
-	return GenericHTTPClient::sendRaw("TAKE_SNAPSHOT:prefix=" + prefix, _ip, PORT);
+    return GenericHTTPClient::sendRaw("TAKE_SNAPSHOT:prefix=" + prefix, _ip, PORT);
 }
 bool ClientLLabH264Recorder::clearUserData() {
 	return GenericHTTPClient::sendRaw(String("CLEAR_USER"), _ip, PORT);
@@ -94,10 +97,14 @@ bool ClientLLabH264Recorder::setFirstname(String firstname) {
 	return GenericHTTPClient::sendRaw(":first=" + firstname, _ip, PORT);
 }
 
+bool ClientLLabH264Recorder::setFirstUserEmail(String firstname, String user, String email) {
+	return GenericHTTPClient::sendRaw(":first=" + firstname + ":username=" + user + ":email=" + email, _ip, PORT);
+}
+
 void ClientLLabH264Recorder::runLoop() {
 	String response = GenericHTTPClient::receiveData();
 	// The response is parsed, and action is taken according to the last command executed
-	if (response) {
+	if (response && response != "") {
 		// Remove trailing newline from response
 		if(response[response.length()-1] == '\n') {
 			response = response.substring(0,response.length() - 1);

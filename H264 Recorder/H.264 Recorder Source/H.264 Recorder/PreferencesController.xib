@@ -49,7 +49,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="442" height="459"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <tabView ambiguous="YES" misplaced="YES" initialItem="Au5-Mc-Axw" translatesAutoresizingMaskIntoConstraints="NO" id="ZFV-et-uBG">
+                    <tabView misplaced="YES" initialItem="Au5-Mc-Axw" translatesAutoresizingMaskIntoConstraints="NO" id="ZFV-et-uBG">
                         <rect key="frame" x="13" y="36" width="416" height="417"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
@@ -77,7 +77,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-Be-r7J">
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-Be-r7J">
                                             <rect key="frame" x="119" y="312" width="260" height="19"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SAX-Lf-cDh">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -85,7 +85,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="agB-gN-WpH">
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="agB-gN-WpH">
                                             <rect key="frame" x="119" y="334" width="260" height="19"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="I8E-fh-NrZ">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -93,7 +93,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="1L5-8V-SCY">
+                                        <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1L5-8V-SCY">
                                             <rect key="frame" x="116" y="289" width="299" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="tcx-Ht-7Rx"/>
@@ -106,14 +106,14 @@
                                                 <action selector="passthroughToggled:" target="-2" id="aSk-7W-oom"/>
                                             </connections>
                                         </button>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="fp0-AA-CKB">
+                                        <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fp0-AA-CKB">
                                             <rect key="frame" x="116" y="269" width="220" height="20"/>
                                             <buttonCell key="cell" type="check" title="Auto restart stream on failure" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="6d8-rM-jN9">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
                                         </button>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-kg-axE">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-kg-axE">
                                             <rect key="frame" x="44" y="373" width="308" height="14"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Some options require restart of the stream to take effect." id="aHU-xz-1WA">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -153,7 +153,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-ZQ-VxL">
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-ZQ-VxL">
                                             <rect key="frame" x="119" y="245" width="260" height="19"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="jHj-Dd-vgr">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -172,7 +172,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yxf-ol-ahd">
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yxf-ol-ahd">
                                             <rect key="frame" x="119" y="223" width="260" height="19"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="wyy-nP-YPt">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -228,7 +228,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-S5-It4">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-S5-It4">
                                             <rect key="frame" x="219" y="128" width="118" height="14"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="minutes (0 = disable)" id="Kdt-lV-7qB">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -236,9 +236,9 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-Kz-dIu">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-Kz-dIu">
                                             <rect key="frame" x="219" y="176" width="118" height="14"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="frames" id="3RE-qq-ahH">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="frames (0 = default)" id="3RE-qq-ahH">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -599,11 +599,11 @@
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Snapshots" identifier="" id="aAK-Di-nhK">
-                                <view key="view" ambiguous="YES" id="i8E-Ze-Q15">
+                                <view key="view" id="i8E-Ze-Q15">
                                     <rect key="frame" x="10" y="33" width="396" height="371"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98I-H8-jsh">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="98I-H8-jsh">
                                             <rect key="frame" x="15" y="331" width="130" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="126" id="ea6-yQ-CGq"/>
@@ -614,7 +614,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc3-g2-6EY">
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qc3-g2-6EY">
                                             <rect key="frame" x="125" y="331" width="254" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="R9K-Pq-m1B">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -622,7 +622,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Mm-s2-G7H">
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Mm-s2-G7H">
                                             <rect key="frame" x="119" y="295" width="159" height="32"/>
                                             <buttonCell key="cell" type="push" title="Set snapshot directory" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JbZ-Cv-J9e">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -632,7 +632,7 @@
                                                 <action selector="snapshotFolderDialog:" target="-2" id="LL7-ll-zsu"/>
                                             </connections>
                                         </button>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tan-JK-8vR">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tan-JK-8vR">
                                             <rect key="frame" x="15" y="184" width="130" height="17"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Auto snapshots dir:" id="2Mi-yf-kh9">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -640,7 +640,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJe-5A-ILk">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tJe-5A-ILk">
                                             <rect key="frame" x="15" y="239" width="120" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="116" id="dhw-kH-Chh"/>
@@ -651,7 +651,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-2c-3o0">
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-2c-3o0">
                                             <rect key="frame" x="125" y="184" width="254" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="RQa-8k-lOs">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -659,7 +659,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-Tv-87x">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-Tv-87x">
                                             <rect key="frame" x="15" y="214" width="132" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="128" id="3yk-17-oMl"/>
@@ -670,7 +670,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-2l-vLR">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-2l-vLR">
                                             <rect key="frame" x="354" y="216" width="132" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="128" id="03C-1h-VnE"/>
@@ -681,7 +681,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUj-yu-LWV">
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YUj-yu-LWV">
                                             <rect key="frame" x="125" y="214" width="224" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="H3g-Z5-nlf">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -689,7 +689,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNh-oq-JSz">
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NNh-oq-JSz">
                                             <rect key="frame" x="119" y="148" width="159" height="32"/>
                                             <buttonCell key="cell" type="push" title="Set autosnapshots dir" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZmE-Fa-I7v">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -699,13 +699,13 @@
                                                 <action selector="autoSnapshotFolderDialog:" target="-2" id="bXs-iX-WU2"/>
                                             </connections>
                                         </button>
-                                        <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-Yv-Pqq">
+                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-Yv-Pqq">
                                             <rect key="frame" x="17" y="279" width="362" height="5"/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <font key="titleFont" metaFont="system"/>
                                         </box>
-                                        <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEG-nI-6jw">
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KEG-nI-6jw">
                                             <rect key="frame" x="125" y="124" width="96" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="96" id="zMP-8R-fEl"/>
@@ -716,7 +716,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X72-Cm-eP4">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X72-Cm-eP4">
                                             <rect key="frame" x="15" y="126" width="63" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="59" id="ji2-o5-1Xs"/>
@@ -727,7 +727,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gvc-31-7O4">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gvc-31-7O4">
                                             <rect key="frame" x="225" y="126" width="118" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="114" id="Ufu-Rc-ngu"/>
@@ -858,7 +858,7 @@
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-XX-9E2">
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-XX-9E2">
                         <rect key="frame" x="335" y="14" width="92" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="82" id="CWK-0E-syN"/>
@@ -871,7 +871,7 @@
                             <action selector="applyChanges:" target="-1" id="PYH-vO-Dgk"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xE5-6o-2Fi">
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xE5-6o-2Fi">
                         <rect key="frame" x="257" y="14" width="80" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="588-bb-1kX"/>

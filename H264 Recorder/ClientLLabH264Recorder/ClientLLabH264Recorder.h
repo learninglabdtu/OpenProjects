@@ -32,11 +32,12 @@ public:
 	bool startRecording();
 	bool stopRecording();
 	bool startStreaming();
+	bool stopStreamingAndRecording();
 	bool stopStreaming();
 	bool startAutoSnapshots();
 	bool stopAutoSnapshots();
 	bool takeSnapshot();
-	bool takeSnapshot(String prefix);
+    bool takeSnapshot(String prefix);
 
 	bool clearUserData();
 
@@ -50,6 +51,7 @@ public:
 	bool setUsername(String username);
 	bool setEmail(String email);
 	bool setFirstname(String firstname);
+	bool setFirstUserEmail(String firstname, String user, String email);
 
 	
 	void runLoop();

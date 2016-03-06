@@ -370,7 +370,7 @@
             if([keyframeInterval isEqual: @0]) {
                 streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -acodec libmp3lame -ar 44100 -b:a %@k -vcodec libx264 -b:v %@k -preset %@ -tune zerolatency -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"],[[appDelegate preferences] objectForKey:@"videoBitrate"], x264preset ,streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
             } else {
-                streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -acodec libmp3lame -ar 44100 -b:a %@k -vcodec libx264 -b:v %@k -preset %@ -tune zerolatency -g %@ -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"],[[appDelegate preferences] objectForKey:@"videoBitrate"], x264preset, keyframeInterval ,streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
+                streaming = [[FFMpegWrapper alloc] initWithArguments:[[NSString stringWithFormat:@"-fflags nobuffer -i - -acodec libmp3lame -ar 44100 -b:a %@k -vcodec libx264 -b:v %@k -preset %@ -tune zerolatency -x264opts keyint=%@:scenecut=-1 -f flv %@", [[appDelegate preferences] objectForKey:@"audioBitrate"],[[appDelegate preferences] objectForKey:@"videoBitrate"], x264preset, keyframeInterval ,streamURL] componentsSeparatedByString:@" "] autoRestart:streamAutoRestart label:@"streaming"];
                 NSLog(@"Setting keyframe interval to %@", keyframeInterval);
             }
         }
