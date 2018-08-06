@@ -218,9 +218,17 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
             [mw pushStills];
         }
     } else if([identifier isEqualToString:@"pull"]) {
-        if (![mw isBusy] && [mw isConnected]) {
-            [mw pullStills];
-        }
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                             defaultButton:@"Yes" alternateButton:@"Cancel"
+                               otherButton:nil informativeTextWithFormat: @"Pulling an empty switcher media pool will clobber the switcher state. You probably meant to hit 'Repair'."];
+        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+            if (returnCode == NSAlertFirstButtonReturn) {
+                return;
+            }
+            if (![mw isBusy] && [mw isConnected]) {
+                [mw pullStills];
+            }
+        }];
     } else if([identifier isEqualToString:@"repair"]) {
         if (![mw localStillsExist]) {
             NSBeginAlertSheet(@"Please pull before repairing.", @"OK", nil, nil, _window, nil, nil, nil, nil, @"");
