@@ -219,8 +219,8 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
         }
     } else if([identifier isEqualToString:@"pull"]) {
         NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure?"
-                                         defaultButton:@"Yes"
-                                       alternateButton:@"Cancel"
+                                         defaultButton:@"Cancel"
+                                       alternateButton:@"Yes"
                                            otherButton:nil
                              informativeTextWithFormat:@"Pulling an empty switcher media pool will clobber the switcher state. You probably meant to hit 'Repair'."];
         [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
