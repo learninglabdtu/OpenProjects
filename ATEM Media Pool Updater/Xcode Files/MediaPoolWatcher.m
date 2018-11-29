@@ -11,6 +11,7 @@
 
 @implementation MediaPoolWatcher
 @synthesize terminating;
+@synthesize stillsCount;
 @synthesize mIP = _mIP;
 @synthesize mPath = _mPath;
 

@@ -218,19 +218,22 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
             [mw pushStills];
         }
     } else if([identifier isEqualToString:@"pull"]) {
-        NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure?"
-                                         defaultButton:@"Cancel"
-                                       alternateButton:@"Yes"
-                                           otherButton:nil
-                             informativeTextWithFormat:@"Pulling an empty switcher media pool will clobber the switcher state. You probably meant to hit 'Repair'."];
-        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-            if (returnCode == NSAlertFirstButtonReturn) {
-                return;
-            }
-            if (![mw isBusy] && [mw isConnected]) {
-                [mw pullStills];
-            }
-        }];
+        // User trying to pull and empty switcher over existing local stills. Double-check they meant to do that.
+        if ([mw localStillsExist] && [mw stillsCount] == 0) {
+            NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                             defaultButton:@"Cancel"
+                                           alternateButton:@"Continue"
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"Local stills exist but switcher media pool is empty. Continuing will destroy local stills. (Did you mean to press \"Repair\"?)"];
+            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+                if (returnCode == NSAlertDefaultReturn) {
+                    return;
+                }
+            }];
+        }
+        if (![mw isBusy] && [mw isConnected]) {
+            [mw pullStills];
+        }
     } else if([identifier isEqualToString:@"repair"]) {
         if (![mw localStillsExist]) {
             NSBeginAlertSheet(@"Please pull before repairing.", @"OK", nil, nil, _window, nil, nil, nil, nil, @"");
