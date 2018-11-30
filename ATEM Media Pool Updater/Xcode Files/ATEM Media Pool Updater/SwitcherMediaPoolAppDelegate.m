@@ -218,8 +218,26 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
             [mw pushStills];
         }
     } else if([identifier isEqualToString:@"pull"]) {
-        if (![mw isBusy] && [mw isConnected]) {
-            [mw pullStills];
+        // User trying to pull when there are existing local stills. Double-check they meant to do that.
+        if ([mw localStillsExist]) {
+            NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                             defaultButton:@"Cancel"
+                                           alternateButton:@"Continue"
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"There are existing local stills. Overwrite?\n(Did you mean to press \"Repair\"?)"];
+            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+                if (returnCode == NSAlertAlternateReturn) {
+                    if (![mw isBusy] && [mw isConnected]) {
+                        [mw pullStills];
+                    }
+                } else {
+                    return;
+                }
+            }];
+        } else {
+            if (![mw isBusy] && [mw isConnected]) {
+                [mw pullStills];
+            }
         }
     } else if([identifier isEqualToString:@"repair"]) {
         if (![mw localStillsExist]) {
