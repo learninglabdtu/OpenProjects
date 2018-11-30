@@ -65,6 +65,5 @@
 @property (retain) NSString* mIP;
 @property (retain) NSString* mPath;
 @property bool terminating;
-@property uint32_t stillsCount;
 
 @end

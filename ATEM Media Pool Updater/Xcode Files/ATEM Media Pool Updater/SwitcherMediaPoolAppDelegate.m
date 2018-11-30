@@ -218,13 +218,13 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
             [mw pushStills];
         }
     } else if([identifier isEqualToString:@"pull"]) {
-        // User trying to pull and empty switcher over existing local stills. Double-check they meant to do that.
-        if ([mw localStillsExist] && [mw stillsCount] == 0) {
+        // User trying to pull when there are existing local stills. Double-check they meant to do that.
+        if ([mw localStillsExist]) {
             NSAlert* alert = [NSAlert alertWithMessageText:@"Are you sure?"
                                              defaultButton:@"Cancel"
                                            alternateButton:@"Continue"
                                                otherButton:nil
-                                 informativeTextWithFormat:@"Local stills exist but switcher media pool is empty. Continuing will destroy local stills. (Did you mean to press \"Repair\"?)"];
+                                 informativeTextWithFormat:@"There are existing local stills. Overwrite?\n(Did you mean to press \"Repair\"?)"];
             [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
                 if (returnCode == NSAlertDefaultReturn) {
                     return;
