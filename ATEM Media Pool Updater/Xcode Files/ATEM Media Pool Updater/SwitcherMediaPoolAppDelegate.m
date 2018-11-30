@@ -234,6 +234,10 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
                     return;
                 }
             }];
+        } else {
+            if (![mw isBusy] && [mw isConnected]) {
+                [mw pullStills];
+            }
         }
     } else if([identifier isEqualToString:@"repair"]) {
         if (![mw localStillsExist]) {
