@@ -226,13 +226,14 @@ NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"ATEMUpdater
                                                otherButton:nil
                                  informativeTextWithFormat:@"There are existing local stills. Overwrite?\n(Did you mean to press \"Repair\"?)"];
             [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-                if (returnCode == NSAlertDefaultReturn) {
+                if (returnCode == NSAlertAlternateReturn) {
+                    if (![mw isBusy] && [mw isConnected]) {
+                        [mw pullStills];
+                    }
+                } else {
                     return;
                 }
             }];
-        }
-        if (![mw isBusy] && [mw isConnected]) {
-            [mw pullStills];
         }
     } else if([identifier isEqualToString:@"repair"]) {
         if (![mw localStillsExist]) {
